@@ -1,0 +1,244 @@
+html,
+body {
+    /* height: 100%;
+    margin: 0;
+    display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f4f4f4;
+    overflow: hidden;
+}
+
+/* Background container */
+.background-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: cadetblue;
+}
+
+/* Dynamic background with wave animation */
+.dynamic-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 90px;
+    /* Default height */
+    background: linear-gradient(359deg, #d9d9d9, #ff2d2d);
+    /* Soft gradient color */
+    z-index: 1;
+    transition: height 0.2s ease;
+    overflow: hidden;
+}
+
+/* Wavy line on top border */
+.wavy-line {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    z-index: 2;
+    overflow: hidden;
+}
+
+/* SVG animation for wave */
+.wave path {
+    stroke: white;
+    stroke-width: 2;
+    fill: none;
+    animation: wave-animation 3s linear infinite;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Content container for text */
+.content {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    text-align: center;
+    z-index: 3;
+}
+
+.content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.content p {
+    font-size: 1rem;
+}
+
+/* Slider container at the bottom */
+.slider-container {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 3;
+}
+
+/* Styling for slider */
+.form-range {
+    width: 80%;
+    max-width: 400px;
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+    /* Slider gradient */
+    height: 8px;
+    border-radius: 5px;
+    appearance: none;
+}
+
+.form-range::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background-color: #ff9a9e;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Make slider thumb responsive for other browsers */
+.form-range::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background-color: #ff9a9e;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+/* dB Indicator */
+.db-indicator {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: rgb(255, 255, 255);
+    color: #000;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 4;
+    transition: background-color 0.6s ease-in-out;
+    max-width: 90%;
+    text-align: center;
+}
+
+/* Color levels */
+.lemaaah {
+    background-color: #cfcfcf;
+    color: #000;
+}
+
+.not-bad {
+    background-color: #d1eb2a;
+    color: #000;
+}
+
+.segitu-aja {
+    background-color: #fa9702;
+    color: #000;
+}
+
+.excellent {
+    background-color: #ff2612;
+    color: #fff;
+}
+
+.menyala-suaraku {
+    background-color: #8702b0;
+    color: #fff;
+}
+
+.highlight {
+    font-size: 24px;
+    color: #fff;
+    /* Red */
+}
+
+section {
+    /* position: relative;
+    width: 100%;
+    height: 100vh; */
+    /* background: #3586ff; */
+    overflow: hidden;
+}
+
+section .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('img/wave.png');
+    background-size: 1000px 100px;
+}
+
+section .wave.wave1 {
+    animation: animate 25s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
+
+section .wave.wave2 {
+    animation: animate2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+
+section .wave.wave3 {
+    animation: animate 35s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15px;
+}
+
+section .wave.wave4 {
+    animation: animate2 5s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20px;
+}
+
+@keyframes animate {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: -1000px;
+    }
+}
